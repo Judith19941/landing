@@ -43,7 +43,7 @@ h1, h2, h3 {
 }
 
 header, footer, section {
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
 }
 
@@ -90,6 +90,7 @@ header button:hover,
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .brand {
@@ -100,10 +101,10 @@ header button:hover,
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     padding-left: 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .nav-links li a {
@@ -415,7 +416,138 @@ footer a:hover {
     color: #e2e2e2;
     font-weight: 500;
   }
-  
+  .floating-telegram {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.telegram-btn {
+  display: inline-block;
+  background-color: #0088cc;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.telegram-btn:hover {
+  background-color: #005f99;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+
+header button,
+.download-btn {
+    background-color: #238636;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border: none;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+    text-decoration: none;
+}
+
+  /* Navbar */
+  .navbar-container {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        justify-content: center; /* Center items if wrapped */
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Allow wrapping for links */
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links li {
+        text-align: center;
+        width: auto; /* Adjust width for better alignment */
+    }
+
+  /* Floating Telegram Button */
+  .floating-telegram {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .telegram-btn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  /* Buttons */
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .cta-button.primary {
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  footer a {
+    margin: 0;
+    text-align: center;
+  }
+
+  /* Hero Section */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Carousel */
+  .market-carousel {
+    padding: 0 0.5rem;
+  }
+
+  .carousel-card {
+    min-width: 180px;
+    padding: 1rem;
+  }
+
+  /* Assets Table */
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+}
 
 
   </style>
@@ -427,6 +559,10 @@ footer a:hover {
   <script defer src="js/main.js"></script>
 </head>
 <body>
+
+  <div class="floating-telegram">
+    <a href="https://t.me/DecentWalletOfficial" target="_blank" class="telegram-btn">💬 Join Telegram</a>
+  </div>
   <!-- ✅ Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
@@ -436,6 +572,7 @@ footer a:hover {
       </ul>
     </div>
   </nav>
+
 
   <!-- ✅ Header -->
   <header id="home" class="hero-section">
